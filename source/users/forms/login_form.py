@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(required=True, label='Логин')
+    email = forms.CharField(required=True, label='Email')
     password = forms.CharField(required=True, label='Пароль', widget=forms.PasswordInput)
 
 
