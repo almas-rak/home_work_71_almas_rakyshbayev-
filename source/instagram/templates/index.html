@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for us in user_obj %}
+
+{{ us.username }}
+<img src="uploads/{{us.avatar}}" alt="img">
+
+{% endfor %}
+{% endblock content %}
