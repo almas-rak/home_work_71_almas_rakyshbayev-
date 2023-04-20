@@ -18,6 +18,15 @@ class CustomUserCreationForm(forms.ModelForm):
         fields = (
             'username', 'password', 'password_confirm', 'first_name', 'last_name', 'email', 'avatar', 'birth_date')
 
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        avatar = self.cleaned_data.get('avatar')
+        if avatar:
+            user.avatar = avatar
+        if commit:
+            user.save()
+        return user
+
 
 class UserChangeForm(forms.ModelForm):
     class Meta:

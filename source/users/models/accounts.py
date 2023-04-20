@@ -22,7 +22,8 @@ class Account(AbstractUser):
         null=True,
         blank=True,
         upload_to='user_pic',
-        verbose_name='Аватар'
+        verbose_name='Аватар',
+        default='user_pic/default/placeholder.png'
     )
 
     birth_date = models.DateField(
